@@ -1,7 +1,7 @@
 /*    
     Program Name:  Photo Gallery Application
-    Author: 
-    Date:   
+    Author: Jon Baker
+    Date: March 14, 2017
     Filename: photos.js
  */
 
