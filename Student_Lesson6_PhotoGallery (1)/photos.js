@@ -176,43 +176,33 @@ function leftArrow() {
 /*           This method is executed to allow the photo gallery to shift to five image layout.         */
 /******************************************************************************************************/
 function previewFive() {
-     var articleEl = document.getElementsByTagName("article")[0];
-    
-    // create figure and img elements for fifth image
-    var lastFigure = document.createElement("figure");
-    
-    lastFigure.id = "fig5";
-    lastFigure.style.zIndex = "5";
-    lastFigure.style.position = "absolute";
-    lastFigure.style.right = "45px";
-    lastFigure.style.top = "67px";
- 
-    var lastImage = document.createElement("img");
-    lastImage.width = "240";
-    lastImage.height = "135";
-    
-    lastFigure.appendChild(lastImage);
+  var articleEl = document.getElementsByTagName("article")[0];
+ // create figure and img elements for fifth image
+ var lastFigure = document.createElement("figure");
+ lastFigure.id = "fig5";
+ lastFigure.style.zIndex = "5";
+ lastFigure.style.position = "absolute";
+ lastFigure.style.right = "45px";
+ lastFigure.style.top = "67px";
+ var lastImage = document.createElement("img");
+ lastImage.width = "240";
+ lastImage.height = "135";
+ lastFigure.appendChild(lastImage);
 
-    articleEl.appendChild(lastFigure);
-    
-    //clone figure element for fifth image and edit to be first image
-    var firstFigure = lastFigure.cloneNode(true);
- 
-    firstFigure.id = "fig1";
-    firstFigure.style.right = " ";
-    firstFigure.style.left = "45px";
- 
-    articleEl.insertBefore(firstFigure, document.getElementById("fig2"));
- 
-    // add appropriate src values to two new img elements
-    document.getElementsByTagName("img")[0].src = "images/IMG_0" + photoOrder[0] + "sm.jpg";
-    document.getElementsByTagName("img")[4].src = "images/IMG_0" + photoOrder[4] + "sm.jpg";
- 
-    figureCount = 5;
- 
-    //disable the ‘Show more images’ button after it has been selected once
-    var numberButton = document.querySelector("#fiveButton p");
-    numberButton.removeEventListener("click", previewFive, false);
+ articleEl.appendChild(lastFigure);
+ //clone figure element for fifth image and edit to be first image
+ var firstFigure = lastFigure.cloneNode(true);
+ firstFigure.id = "fig1";
+ firstFigure.style.right = " ";
+ firstFigure.style.left = "45px";
+ articleEl.insertBefore(firstFigure, document.getElementById("fig2"));
+ // add appropriate src values to two new img elements
+ document.getElementsByTagName("img")[0].src = "images/IMG_0" + photoOrder[0] + "sm.jpg";
+ document.getElementsByTagName("img")[4].src = "images/IMG_0" + photoOrder[4] + "sm.jpg";
+ figureCount = 5;
+ //disable the ‘Show more images’ button after it has been selected once
+ var numberButton = document.querySelector("#fiveButton p");
+ numberButton.removeEventListener("click", previewFive, false);
    
 }//end of previewFive()
 
